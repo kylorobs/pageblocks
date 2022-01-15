@@ -15,9 +15,9 @@ const TopPanels = (props) => {
 
   return (
     <div className="panel__top">
-      <BasicActions />
-      <PanelDevices />
-      <PanelSwitcher />
+      <BasicActions editor={props.editor} />
+      <PanelDevices editor={props.editor} />
+      <PanelSwitcher editor={props.editor} />
     </div>
   );
 };

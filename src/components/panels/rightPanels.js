@@ -27,9 +27,9 @@ const RightPanels = (props) => {
 
   return (
     <div className="panel__right">
-      <LayersEditor />
-      <StylesEditor />
-      <TraitsEditor />
+      <LayersEditor editor={props.editor} />
+      <StylesEditor editor={props.editor} />
+      <TraitsEditor editor={props.editor} />
     </div>
   );
 };
