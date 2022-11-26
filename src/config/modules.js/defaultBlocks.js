@@ -13,7 +13,7 @@ export const defaultBlocks = [
   {
     id: 'text',
     label: 'Text',
-    content: '<div data-gjs-type="text">Insert your text here</div>',
+    content: '<p>Insert your text here</p>',
   },
   {
     id: 'my-input-type',

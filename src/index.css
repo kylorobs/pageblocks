@@ -1,3 +1,10 @@
+:root {
+  --main: #101730;
+  --block: #2c3c5e;
+  --white: #ffffff;
+}
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -102,7 +109,7 @@ varsity-race {
 }
 
 .panel__top {
-  padding: 0;
+  padding: 1rem;
   width: 100%;
   display: flex;
   position: initial;
@@ -117,11 +124,21 @@ varsity-race {
   height: 100%;
 }
 
+#blocks {
+  padding: 1rem;
+  background: var(--main)
+}
+
+.gjs-one-bg {
+  background-color: var(--main);
+}
+
 
 .gjs-block {
-  width: auto;
+  width: 100%;
   height: auto;
   min-height: auto;
+  background: var(--block);
 }
 
 .panel__basic-actions {
@@ -138,7 +155,6 @@ varsity-race {
   justify-content: flex-start;
   align-items: stretch;
   flex-wrap: nowrap;
-  height: 300px;
 }
 
 .editor-canvas {

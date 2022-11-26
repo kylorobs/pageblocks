@@ -12,7 +12,7 @@ const createConfig = () => ({
   },
   container: '#gjs',
   fromElement: true,
-  height: '300px',
+  height: '100vh',
   width: 'auto',
   // Disable the storage manager for the moment
   storageManager: false,
@@ -22,7 +22,6 @@ const createConfig = () => ({
   deviceManager: {
     devices,
   },
-  // We define a default panel as a sidebar to contain layers
   panels: {
     defaults: [],
   },
@@ -32,6 +31,7 @@ const createConfig = () => ({
   blockManager: {
     appendTo: '#blocks',
     blocks: defaultBlocks,
+    custom: true,
   },
   selectorManager: {
     appendTo: '.styles-container',
@@ -40,7 +40,7 @@ const createConfig = () => ({
     appendTo: '.styles-container',
     sectors: styleSectors,
   },
-  plugins: [customComponents],
+  // plugins: [customComponents],
 });
 
 export default createConfig;
