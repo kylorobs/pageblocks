@@ -1,5 +1,6 @@
 export const defaultBlocks = [
   {
+    category: 'Basic',
     id: 'section', // id is mandatory
     label: '<b>Section</b>', // You can use HTML/SVG inside labels
     attributes: {
@@ -11,16 +12,19 @@ export const defaultBlocks = [
                   </section>`,
   },
   {
+    category: 'Basic',
     id: 'text',
     label: 'Text',
     content: '<p>Insert your text here</p>',
   },
   {
+    category: 'Basic',
     id: 'my-input-type',
     label: 'my-input-type',
     content: '<input />',
   },
   {
+    category: 'Basic',
     id: 'image',
     label: 'Image',
     // Select the component once it's dropped

@@ -8,6 +8,7 @@ import { addSwitcherPanel } from '../panels/addSwitcherPanel';
 import { addActionsPanel } from '../panels/addActionsPanel';
 import { addSidePanel } from '../panels/addSidePanel';
 import { addTopPanel } from '../panels/addTopPanel';
+import { addCustomComponents } from '../panels/addCustomElements';
 
 const Editor = () => {
   const [editor, setEditor] = useState(null);
@@ -31,55 +32,90 @@ const Editor = () => {
     addDevicePanel(ed);
     addActionsPanel(ed);
 
-    // const toAdd = (name) => ed.blocks.indexOf(name) >= 0;
+    addCustomComponents(ed);
 
-    // toAdd('link-block') &&
-    //   ed.BlockManager.add('link-block', {
-    //     category: 'Basic',
-    //     label: 'Link Block',
-    //     attributes: { class: 'fa fa-link' },
-    //     content: {
-    //       type: 'link',
-    //       editable: false,
-    //       droppable: true,
-    //       style: {
-    //         display: 'inline-block',
-    //         padding: '5px',
-    //         'min-height': '50px',
-    //         'min-width': '50px',
-    //       },
+    // UNCOMMENT BELOW
+
+    // ed.DomComponents.addType('kclsu-button', {
+    //   isComponent: (el) => el.tagName === 'KCLSU-BUTTON',
+    //   model: {
+    //     defaults: {
+    //       traits: [
+    //         // Strings are automatically converted to text types
+    //         'text', // Same as: { type: 'text', name: 'name' }
+    //         'link',
+    //         'purple',
+    //       ],
+    //       // As by default, traits are binded to attributes, so to define
+    //       // their initial value we can use attributes
+    //       attributes: { text: 'me', purple: 'false', link: '/' },
     //     },
-    //   });
 
-    ed.Components.addType('kclsu-button', {
-      // Model definition
-      model: {
-        // Default properties
-        defaults: {
-          tagName: 'KCLSU-BUTTON',
-          droppable: false, // Can't drop other elements inside
-          traits: ['KCLSU-BUTTON'],
-        },
-      },
-    });
+    //     handleTypeChange() {
+    //       console.log('Input type changed to: ');
+    //     },
 
-    ed.BlockManager.add('kclsu-button', {
-      category: 'Basic',
-      label: 'Kclsu-Button',
-      component: 'KCLSU-BUTTON',
-      attributes: { class: 'fa fa-link' },
-      content: {
-        type: 'link',
-        editable: false,
-        droppable: true,
-        style: {
-          display: 'inline-block',
-          padding: '5px',
-          'min-height': '50px',
-          'min-width': '50px',
-        },
-      },
-    });
+    //     // init() {
+    //     //   console.log('init');
+    //     //   console.log(this);
+    //     //   this.on('change:placeholder', this.handleTypeChange);
+    //     // },
+    //   },
+    // });
+
+    // ed.Blocks.add('KCLSUbutton', {
+    //   label: '<b>Kclsu Button</b>',
+    //   attributes: { purple: false, text: 'My Custom Button' },
+    //   content: { type: 'kclsu-button' },
+    // });
+
+    // <!-------UNCOMMENT ABOVE ------->
+
+    // ed.Blocks.add('LABELCARD', {
+    //   label: '<b>Label card</b>',
+    //   attributes: { purple: true },
+    //   content: { type: 'label-card' },
+    // });
+
+    // ed.Blocks.add('MODAL', {
+    //   label: '<b>Modal</b>',
+    //   content: { type: 'kclsu-modal' },
+    // });
+
+    // ed.Blocks.add('FLEX', {
+    //   label: '<b>Flex</b>',
+    //   content: { type: 'flex-container' },
+    // });
+
+    // ed.Components.addType('kclsu-button', {
+    //   // Model definition
+    //   model: {
+    //     // Default properties
+    //     defaults: {
+    //       tagName: 'KCLSU-BUTTON',
+    //       droppable: false, // Can't drop other elements inside
+    //       traits: ['KCLSU-BUTTON'],
+    //     },
+    //   },
+    // });
+
+    // ed.BlockManager.add('kclsu-button', {
+    //   category: 'Basic',
+    //   label: 'Kclsu-Button',
+    //   component: 'KCLSU-BUTTON',
+    //   attributes: { class: 'fa fa-link' },
+    //   content: {
+    //     type: 'link',
+    //     editable: false,
+    //     droppable: true,
+    //     style: {
+    //       display: 'inline-block',
+    //       padding: '5px',
+    //       'min-height': '50px',
+    //       'min-width': '50px',
+    //     },
+    //   },
+    // });
 
     console.log(ed);
   };

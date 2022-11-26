@@ -40,7 +40,7 @@ const createConfig = () => ({
     appendTo: '.styles-container',
     sectors: styleSectors,
   },
-  // plugins: [customComponents],
+  plugins: [customComponents],
 });
 
 export default createConfig;
