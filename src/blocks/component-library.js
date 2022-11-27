@@ -10,7 +10,8 @@ export const KCLSUBUTTON = {
       ],
       // As by default, traits are binded to attributes, so to define
       // their initial value we can use attributes
-      attributes: { text: 'me', purple: 'false', link: '/' },
+      attributes: { text: 'me', purple: 'true', link: '/' },
+      content: `<kclsu-button></kclsu-button>`,
     },
 
     handleTypeChange() {
@@ -25,6 +26,6 @@ export const KCLSUBUTTON = {
   },
   labelName: 'KclsuButton',
   labelElement: '<b>Kclsu Button</b>',
-  attributes: { purple: false, text: 'My Custom Button' },
+  attributes: { purple: true, text: 'My Custom Button' },
   content: { type: 'kclsu-button' },
 };

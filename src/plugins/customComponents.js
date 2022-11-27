@@ -1,12 +1,23 @@
-export const customComponents = () => (editor) => {
+export const customComponents = (editor) => {
   editor.Components.addType('kclsu-button', {
     // Model definition
     model: {
       // Default properties
       defaults: {
-        tagName: 'KCLSU-BUTTON',
+        tagName: 'kclsu-button',
+        traits: [
+          // Strings are automatically converted to text types
+          'text', // Same as: { type: 'text', name: 'name' }
+          'link',
+          'purple',
+        ],
+        attributes: {
+          text: 'me2',
+          purple: 'true',
+          link: '/',
+          style: 'visibility:unset',
+        },
         droppable: false, // Can't drop other elements inside
-        traits: ['KCLSU-BUTTON'],
       },
     },
   });

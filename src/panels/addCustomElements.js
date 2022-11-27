@@ -7,15 +7,15 @@ import { componentLibraryBlocks } from '../blocks';
 
 export function addCustomComponents(ed) {
   componentLibraryBlocks.forEach((cmpBlock) => {
-    ed.DomComponents.addType(cmpBlock.name, {
-      isComponent: (el) => el.tagName === cmpBlock.model.defaults.tagName,
-      model: { ...cmpBlock.model },
-    });
+    // ed.DomComponents.addType(cmpBlock.name, {
+    //   isComponent: (el) => el.tagName === cmpBlock.model.defaults.tagName,
+    //   model: { ...cmpBlock.model },
+    // });
     ed.Blocks.add(cmpBlock.labelName, {
       category: 'Library',
       label: cmpBlock.labelElement,
-      attributes: { ...cmpBlock.attributes },
-      content: { ...cmpBlock.content },
+      attributes: { purple: true, text: 'My Custom Button' },
+      content: { type: cmpBlock.name },
     });
   });
 }
