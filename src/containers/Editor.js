@@ -67,6 +67,7 @@ const Editor = () => {
           <div id="gjs">
             <div>
               <h1>Page Editor</h1>
+              <kclsu-button>Test me</kclsu-button>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 export const customComponents = (editor) => {
   editor.Components.addType('kclsu-button', {
     // Model definition
+    isComponent: (el) => el.tagName === 'KCLSU-BUTTON',
     model: {
       // Default properties
       defaults: {
@@ -13,7 +14,6 @@ export const customComponents = (editor) => {
         ],
         attributes: {
           text: 'me2',
-          purple: 'true',
           link: '/',
           style: 'visibility:unset',
         },
