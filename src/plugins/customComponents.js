@@ -10,14 +10,36 @@ export const customComponents = (editor) => {
           // Strings are automatically converted to text types
           'text', // Same as: { type: 'text', name: 'name' }
           'link',
-          'purple',
+          { type: 'checkbox', name: 'purple' },
         ],
         attributes: {
-          text: 'me2',
+          text: '',
           link: '/',
           style: 'visibility:unset',
         },
         droppable: false, // Can't drop other elements inside
+      },
+      init() {
+        // Also the listener changes from `change:attributes:*` to `change:*`
+        this.on('change:attributes', this.handleAttrChange);
+        this.on('component:mount', this.handleAttrChange);
+      },
+
+      handleAttrChange(e) {
+        console.log('CHANGE');
+        console.log(e);
+        console.log('Attributes updated: ', this.getAttributes());
+        const newTags = this.getAttributes();
+        this.setAttributes({ text: newTags.text });
+      },
+    },
+    view: {
+      init(e) {
+        // Also the listener changes from `change:attributes:*` to `change:*`
+        console.log('INIY');
+        console.log(e);
+        const newTags = e.getAttributes();
+        e.el.setAttributes({ text: newTags.text });
       },
     },
   });

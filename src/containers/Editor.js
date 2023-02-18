@@ -42,6 +42,10 @@ const Editor = () => {
     // CKEDITOR.instances.ctl00_ctl00_Main_AdminPageContent_editorBody_editorText.execCommand('source')
   };
 
+  const uploadCode = () => {
+    editor.setComponents('<kclsu-button>Okay here we go </kclsu-button>');
+  };
+
   const loadGrapesJs = async () => {
     const editorConfig = await Grapesjs.init(createConfig());
     configure(editorConfig);
@@ -67,7 +71,7 @@ const Editor = () => {
           <div id="gjs">
             <div>
               <h1>Page Editor</h1>
-              <kclsu-button>Test me</kclsu-button>
+              <kclsu-button center>Test me</kclsu-button>
             </div>
           </div>
         </div>
@@ -78,6 +82,9 @@ const Editor = () => {
         </div>
       </div>
       <Paste save={saveWork} />
+      <button type="button" onClick={() => uploadCode()}>
+        Insert Button
+      </button>
     </div>
   );
 };
